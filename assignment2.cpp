@@ -1,7 +1,8 @@
 /*
 CPSC 121-02
 Michael Peters
-michaelpeterswa
+mpeters4
+michaelpeterswa (github)
 Assignment 2 
 */
 
