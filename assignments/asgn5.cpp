@@ -32,14 +32,13 @@ int i = 0;
 cout << "input character sequence (less than 80)" << endl;
 cout << "Plaintext: ";
 cin.getline(ch,80);
-
+cout << endl;
 
 cout << "Ciphertext: ";
 while(i < mystrlen(ch)){
  encrypt(ch[i]);
  i++;
 }
-cout << endl;
 cout << endl;
 restart(); //run restart
 return 0;
@@ -51,24 +50,24 @@ void restart() //restart function
 	cin >> yn;
   cin.ignore();
 	switch(yn){
-   	 case 'y':
+    	 case 'y':
           main();
 	 			  break;
-		 case 'Y':
+        case 'Y':
           main();
 	 			  break;
-     case 'n':
+        case 'n':
           cout << "Goodbye!" << endl;
           exit(1);
           break;
-     case 'N':
+        case 'N':
           cout << "Goodbye!" << endl;
           exit(1);
           break;
-     default :
+        default :
           cout << "invalid" << endl;
           restart();
-					break;
+          break;
    
 	}
 
@@ -89,37 +88,37 @@ return ct;
 
 bool isAlpha(char ch){
 if((65 <= ch && ch <= 90)|| (97 <= ch && ch <= 122)){
-return true;
-}
-return false;
+  return true;
+  }
+  return false;
 }
 
 bool firstHalfA(char ch){
 if (65 <= ch && ch <= 77){
-return true;
-}
-return false;
+  return true;
+  }
+  return false;
 }
 
 bool firstHalfa(char ch){
 if (97 <= ch && ch <= 109){
-return true;
-}
-return false;
+  return true;
+  }
+  return false;
 }
 
 bool secondHalfA(char ch){
 if (78 <= ch && ch <= 90){
-return true;
-}
-return false;
+  return true;
+  }
+  return false;
 }
 
 bool secondHalfa(char ch){
 if (110 <= ch && ch <= 122){
-return true;
-}
-return false;
+  return true;
+  }
+  return false;
 }
 
 char encrypt(char ch){
