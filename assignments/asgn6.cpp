@@ -11,7 +11,8 @@ Assignment 6
 
 #include <iostream>
 #include <cmath>
-#include <cctype> //add libraries
+#include <cctype>
+#include <cstdlib> //add libraries
 using namespace std;
 
 bool isPrime(int num);
