@@ -61,6 +61,15 @@ restart();
  restart(); //run restart
  return 0;
 }
+
+ /* 
+   void restart()
+   
+   pre: takes input yn and asks user for restart
+   post: main() if yn == "y" || "Y"
+
+*/
+
 void restart() //restart function
 	{
  	char yn;
@@ -70,10 +79,10 @@ void restart() //restart function
   switch(yn){
     	 case 'y':
           main();
-	 			  break;
+          break;
         case 'Y':
           main();
-	 			  break;
+          break;
         case 'n':
           cout << "Goodbye!" << endl;
           exit(1);
@@ -109,8 +118,8 @@ for(int i = 0; i < amt; i++)
 /* 
    char encrypt(char line[], int shift);
    
-   pre: takes input for number of new lines
-   post: prints endl amt # of times
+   pre: takes plaintext string
+   post: encrypts the string based upon shift amt
 
 */
 
@@ -129,7 +138,13 @@ return line[81];
   
 }
  
- 
+ /* 
+   char decrypt(char line[], int shift);
+   
+   pre: takes encrypted string
+   post: decrypts string
+
+*/
 char decrypt(char line[], int shift){
   for(int i = 0; i < strlen(line); i++){
    if(isalpha(line[i])){
@@ -142,6 +157,14 @@ char decrypt(char line[], int shift){
   return line[81];
 }
 
+/* 
+   bool shiftchk(int shift);
+   
+   pre: checks shift input for validity
+   post: returns true if constraints met
+
+*/
+
 bool shiftchk(int shift){
 if(shift >= 0 && shift <= 25)
  return true;
@@ -149,6 +172,14 @@ else
  return false;
  }
  
+/* 
+   void display(char line[]);
+   
+   pre: takes inp string
+   post: prints to console inp[]
+   
+*/
+
 void display(char line[]){
   int i = 0;
   while(i < strlen(line)){
@@ -156,6 +187,14 @@ void display(char line[]){
   i++;
   }
 }
+
+/* 
+   char alphToInt(char ch, bool upper);
+   
+   pre: takes alphanumeric value from ascii
+   post: returns integer 0-26 based upon english alphabet
+   
+*/
 
 int alphToInt(char ch, bool upper){
 int a;
@@ -167,6 +206,14 @@ else
 return a;
 
  }
+
+/* 
+   char intToAlph(int pos, bool upper);
+   
+   pre: takes integer 0-26 based upon english alphabet
+   post: returns alphanumeric value from ascii
+
+*/
 
 char intToAlph(int pos, bool upper){
 char a;
