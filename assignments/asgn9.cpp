@@ -43,6 +43,11 @@ if(getInput(lower, upper))
 return 0;
 }
 
+/*
+Pre: lower, upper
+Post: return true if bounds fit, false otherwise
+*/
+
 bool getInput(int lower, int upper)
 {
 if(lower >= 0 && lower < 999)
@@ -66,6 +71,11 @@ else{
   }
 }
 
+/*
+Pre: lower, upper, randnum
+Post: random number in randnum array
+*/
+
 void rand(int lower, int upper, int (&randnum)[20])
 {
 int seed = time(0);
@@ -78,6 +88,11 @@ int total = upper-lower;
  randnum[i] = (rand() % total) + lower;
  }
 }
+
+/*
+Pre: randnum
+Post: bubble sorted rand num array
+*/
 
 void bubbl(int (&randnum)[20]){
 int swap = 0;
@@ -92,11 +107,22 @@ int swap = 0;
   } 
  }  
 }
+
+/*
+Pre: randnum, Prime val
+Post: fills struct with num data from randnum
+*/
+
 void fill(int (&randnum)[20], Prime &val){
 for(int i = 0; i < 20; i++){
   val.num[i] = randnum[i];
   }
 }
+
+/*
+Pre: Prime val
+Post: checks for primality, returns 'p' for prime, 'c' for composite
+*/
 
 void primechk(Prime &val){
   for(int j = 0; j < 20; j++){
@@ -112,6 +138,11 @@ void primechk(Prime &val){
   }
 }
  }
+
+/*
+Pre: Prime Struct
+Post: displays contents of the struct
+*/
 
 void display(Prime& val){
   for(int i = 0; i < 20; i++)
